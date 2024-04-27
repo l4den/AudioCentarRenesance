@@ -1,0 +1,329 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-24 10:53+0200\n"
+"PO-Revision-Date: 2024-04-22 16:36+0200\n"
+"Last-Translator:   <gazda@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.10.0\n"
+
+#: .\AudioCentarRenesance\settings.py:128
+msgid "Macedonian"
+msgstr "maqedonisht"
+
+#: .\AudioCentarRenesance\settings.py:129
+msgid "English"
+msgstr "anglisht"
+
+#: .\AudioCentarRenesance\settings.py:130
+msgid "Albanian"
+msgstr "shqip"
+
+#: .\brands\models.py:6 .\categories\models.py:6 .\products\models.py:11
+msgid "Name"
+msgstr "Emri"
+
+#: .\brands\models.py:8 .\categories\models.py:8 .\products\models.py:13
+#: .\templates\products\product.html:110
+msgid "Description"
+msgstr "Përshkrim"
+
+#: .\brands\models.py:9 .\categories\models.py:9 .\products\models.py:35
+#: .\products\models.py:61
+msgid "Image"
+msgstr "Imazh"
+
+#: .\brands\models.py:12
+msgid "Brand"
+msgstr "Markë"
+
+#: .\brands\models.py:13 .\templates\products\store.html:58
+msgid "Brands"
+msgstr "Marka"
+
+#: .\categories\models.py:13 .\templates\products\product.html:89
+msgid "Category"
+msgstr "Kategoria"
+
+#: .\categories\models.py:14 .\templates\includes\footer.html:29
+#: .\templates\includes\navbar.html:104 .\templates\products\store.html:18
+msgid "Categories"
+msgstr "Kategoritë"
+
+#: .\contacts\models.py:7
+msgid "Subject"
+msgstr "Subjekti"
+
+#: .\contacts\models.py:8
+msgid "Message"
+msgstr "Mesazhi"
+
+#: .\contacts\models.py:9 .\products\models.py:37
+msgid "Date_created"
+msgstr "Data e krijimit"
+
+#: .\contacts\models.py:12
+msgid "ContactMessage"
+msgstr "Mesazhi"
+
+#: .\contacts\models.py:13
+msgid "ContactMessages"
+msgstr "Mesazhet"
+
+#: .\contacts\models.py:23
+msgid "NewsLetter"
+msgstr "Email nga buletini"
+
+#: .\contacts\models.py:24
+msgid "NewsLetters"
+msgstr "Email nga buletini"
+
+#: .\products\models.py:14 .\templates\includes\footer.html:44
+msgid "Information"
+msgstr "Informacion"
+
+#: .\products\models.py:16 .\templates\products\store.html:38
+msgid "Price"
+msgstr "Çmim"
+
+#: .\products\models.py:17
+msgid "Discount"
+msgstr "Ulje"
+
+#: .\products\models.py:25
+msgid "Tax"
+msgstr "Tatim"
+
+#: .\products\models.py:26
+msgid "Total_price"
+msgstr "Çmimi total"
+
+#: .\products\models.py:28
+msgid "Stock"
+msgstr "Stoku"
+
+#: .\products\models.py:29
+msgid "Available"
+msgstr "Në dispozicion"
+
+#: .\products\models.py:30
+msgid "Top_selling"
+msgstr "Më i shitur"
+
+#: .\products\models.py:38
+msgid "Date_modified"
+msgstr "Data e modifikimit"
+
+#: .\products\models.py:41
+msgid "Product"
+msgstr "Produkt"
+
+#: .\products\models.py:42
+msgid "Products"
+msgstr "Produktet"
+
+#: .\products\models.py:67
+msgid "ProductGallery"
+msgstr "Imazhi për produktin"
+
+#: .\products\models.py:68
+msgid "ProductGalleries"
+msgstr "Imazhe për produktin"
+
+#: .\templates\ajax\product-list.html:40 .\templates\products\store.html:179
+msgid "No_products_matching"
+msgstr "Nuk ka produkte që përputhen me kriteret e kërkimit"
+
+#: .\templates\contact.html:13
+msgid "Contact_form_text"
+msgstr ""
+"Ne jemi të lumtur t'i përgjigjemi çdo pyetjeje që keni.\n"
+"Ju lutemi përdorni formularin e mëposhtëm për të na kontaktuar."
+
+#: .\templates\contact.html:24
+msgid "Send"
+msgstr "Dërgo"
+
+#: .\templates\includes\footer.html:14 .\templates\includes\footer.html:46
+#: .\templates\includes\navbar.html:107
+msgid "About_us"
+msgstr "Rreth Nesh"
+
+#: .\templates\includes\footer.html:18 .\templates\includes\navbar.html:11
+msgid "Address"
+msgstr "ul.Gjorce Petrov 124A"
+
+#: .\templates\includes\footer.html:19 .\templates\includes\navbar.html:11
+msgid "Skopje-MKD"
+msgstr "Shkup, Maqedoni"
+
+#: .\templates\includes\footer.html:31 .\templates\includes\navbar.html:103
+msgid "All_Products"
+msgstr "Të gjitha Produktet"
+
+#: .\templates\includes\footer.html:32 .\templates\includes\navbar.html:105
+msgid "Discounts"
+msgstr "Ulje"
+
+#: .\templates\includes\footer.html:47
+msgid "Contact_us"
+msgstr "Na kontaktoni"
+
+#: .\templates\includes\navbar.html:57
+msgid "All_categories"
+msgstr "Të Gjitha Kategoritë"
+
+#: .\templates\includes\navbar.html:62
+msgid "Search_here"
+msgstr "Kërko këtu"
+
+#: .\templates\includes\navbar.html:63
+msgid "Search"
+msgstr "Kërko"
+
+#: .\templates\includes\navbar.html:78
+msgid "Menu"
+msgstr "Menu"
+
+#: .\templates\includes\navbar.html:102
+msgid "Home"
+msgstr "Shtëpi"
+
+#: .\templates\includes\navbar.html:106
+msgid "Contact"
+msgstr "Kontaktoni"
+
+#: .\templates\index.html:29
+msgid "Collection"
+msgstr "Mbledhja"
+
+#: .\templates\index.html:30 .\templates\index.html:159
+msgid "Shop_now"
+msgstr "Bli Tani"
+
+#: .\templates\index.html:55
+msgid "New_products"
+msgstr "Produkte të reja"
+
+#: .\templates\index.html:86 .\templates\index.html:209
+#: .\templates\products\product.html:187 .\templates\products\store.html:159
+#: .\templates\search_result.html:30
+msgid "NEW"
+msgstr "I RI"
+
+#: .\templates\index.html:103
+msgid "No_new_products"
+msgstr "Nuk ka produkte të reja për t'u shfaqur"
+
+#: .\templates\index.html:157
+msgid "Hot_deals_this_week"
+msgstr "Oferta të nxehta këtë javë"
+
+#: .\templates\index.html:158
+#, python-format
+msgid "New_collection_%%_off"
+msgstr "Koleksioni i ri Deri në 50% Zbritje"
+
+#: .\templates\index.html:179
+msgid "Top_sellings"
+msgstr "më të shitura"
+
+#: .\templates\index.html:226
+msgid "No_top_selling"
+msgstr "Nuk ka produkte më të shitur për të treguar"
+
+#: .\templates\index.html:258
+msgid "Sign_up_for_the"
+msgstr "Regjistrohu Për"
+
+#: .\templates\index.html:258
+msgid "newsletter"
+msgstr "GAZETE"
+
+#: .\templates\index.html:260
+msgid "Enter_your_email"
+msgstr "Shkruani Email-in tuaj"
+
+#: .\templates\index.html:261
+msgid "Subscribe"
+msgstr "Abonohu"
+
+#: .\templates\products\product.html:81
+msgid "In_Stock"
+msgstr "Në magazinë"
+
+#: .\templates\products\product.html:83
+msgid "Out_Of_Stock"
+msgstr "Jashtë në gjendje"
+
+#: .\templates\products\product.html:94
+msgid "Share"
+msgstr "Shpërndaje"
+
+#: .\templates\products\product.html:111
+msgid "Details"
+msgstr "Detajet"
+
+#: .\templates\products\product.html:163
+msgid "Related_Products"
+msgstr "Produkte të ngjashme"
+
+#: .\templates\products\product.html:204
+msgid "No_Related_Products"
+msgstr "Nuk ka produkte të ngjashme për t'u shfaqur"
+
+#: .\templates\products\store.html:75
+msgid "Additional_filters"
+msgstr "Filtra shtesë"
+
+#: .\templates\products\store.html:84
+msgid "On_Discount"
+msgstr "Me zbritje"
+
+#: .\templates\products\store.html:95
+msgid "Newly_added"
+msgstr "E shtuar rishtazi"
+
+#: .\templates\products\store.html:114
+msgid "Sort_by"
+msgstr "Ndaj sipas"
+
+#: .\templates\products\store.html:116
+msgid "Newest"
+msgstr "Më të rejat"
+
+#: .\templates\products\store.html:117
+msgid "Lowest_price"
+msgstr "Çmimi më i ulët"
+
+#: .\templates\products\store.html:118
+msgid "Highest_price"
+msgstr "Çmimi më i lartë"
+
+#: .\templates\products\store.html:139
+msgid "Applying_filter"
+msgstr "Aplikimi i filtrit"
+
+#: .\templates\search_result.html:12
+msgid "Search_results_for"
+msgstr "Rezultatet e kerkimit per"
+
+#: .\templates\search_result.html:48
+msgid "No_results_for"
+msgstr "Nuk ka rezultate kërkimi për"
+
+#: .\templates\search_result.html:52
+msgid "in_category"
+msgstr "në kategori"

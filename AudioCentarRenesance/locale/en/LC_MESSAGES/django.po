@@ -1,0 +1,329 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-24 10:53+0200\n"
+"PO-Revision-Date: 2024-04-22 16:34+0200\n"
+"Last-Translator:   <gazda@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.10.0\n"
+
+#: .\AudioCentarRenesance\settings.py:128
+msgid "Macedonian"
+msgstr "macedonian"
+
+#: .\AudioCentarRenesance\settings.py:129
+msgid "English"
+msgstr "english"
+
+#: .\AudioCentarRenesance\settings.py:130
+msgid "Albanian"
+msgstr "albanian"
+
+#: .\brands\models.py:6 .\categories\models.py:6 .\products\models.py:11
+msgid "Name"
+msgstr "Name"
+
+#: .\brands\models.py:8 .\categories\models.py:8 .\products\models.py:13
+#: .\templates\products\product.html:110
+msgid "Description"
+msgstr "Description"
+
+#: .\brands\models.py:9 .\categories\models.py:9 .\products\models.py:35
+#: .\products\models.py:61
+msgid "Image"
+msgstr "Image"
+
+#: .\brands\models.py:12
+msgid "Brand"
+msgstr "Brand"
+
+#: .\brands\models.py:13 .\templates\products\store.html:58
+msgid "Brands"
+msgstr "Brands"
+
+#: .\categories\models.py:13 .\templates\products\product.html:89
+msgid "Category"
+msgstr "Category"
+
+#: .\categories\models.py:14 .\templates\includes\footer.html:29
+#: .\templates\includes\navbar.html:104 .\templates\products\store.html:18
+msgid "Categories"
+msgstr "Categories"
+
+#: .\contacts\models.py:7
+msgid "Subject"
+msgstr "Subject"
+
+#: .\contacts\models.py:8
+msgid "Message"
+msgstr "Message"
+
+#: .\contacts\models.py:9 .\products\models.py:37
+msgid "Date_created"
+msgstr "Date created"
+
+#: .\contacts\models.py:12
+msgid "ContactMessage"
+msgstr "Message"
+
+#: .\contacts\models.py:13
+msgid "ContactMessages"
+msgstr "Messages"
+
+#: .\contacts\models.py:23
+msgid "NewsLetter"
+msgstr "Email from Newsletter"
+
+#: .\contacts\models.py:24
+msgid "NewsLetters"
+msgstr "Emails from Newsletter"
+
+#: .\products\models.py:14 .\templates\includes\footer.html:44
+msgid "Information"
+msgstr "Information"
+
+#: .\products\models.py:16 .\templates\products\store.html:38
+msgid "Price"
+msgstr "Price"
+
+#: .\products\models.py:17
+msgid "Discount"
+msgstr "Discount"
+
+#: .\products\models.py:25
+msgid "Tax"
+msgstr "Tax"
+
+#: .\products\models.py:26
+msgid "Total_price"
+msgstr "Total price"
+
+#: .\products\models.py:28
+msgid "Stock"
+msgstr "Stock"
+
+#: .\products\models.py:29
+msgid "Available"
+msgstr "Is available"
+
+#: .\products\models.py:30
+msgid "Top_selling"
+msgstr "Top selling"
+
+#: .\products\models.py:38
+msgid "Date_modified"
+msgstr "Date modified"
+
+#: .\products\models.py:41
+msgid "Product"
+msgstr "Product"
+
+#: .\products\models.py:42
+msgid "Products"
+msgstr "Products"
+
+#: .\products\models.py:67
+msgid "ProductGallery"
+msgstr "Product gallery"
+
+#: .\products\models.py:68
+msgid "ProductGalleries"
+msgstr "Product galleries"
+
+#: .\templates\ajax\product-list.html:40 .\templates\products\store.html:179
+msgid "No_products_matching"
+msgstr "No Products Matching Filter Criteria"
+
+#: .\templates\contact.html:13
+msgid "Contact_form_text"
+msgstr ""
+"We are glad to answer any question that you have. Please use the form below "
+"to contact us."
+
+#: .\templates\contact.html:24
+msgid "Send"
+msgstr "Send"
+
+#: .\templates\includes\footer.html:14 .\templates\includes\footer.html:46
+#: .\templates\includes\navbar.html:107
+msgid "About_us"
+msgstr "About Us"
+
+#: .\templates\includes\footer.html:18 .\templates\includes\navbar.html:11
+msgid "Address"
+msgstr "ul.Gjorce Petrov 124A"
+
+#: .\templates\includes\footer.html:19 .\templates\includes\navbar.html:11
+msgid "Skopje-MKD"
+msgstr "Skopje, Macedonia"
+
+#: .\templates\includes\footer.html:31 .\templates\includes\navbar.html:103
+msgid "All_Products"
+msgstr "All Products"
+
+#: .\templates\includes\footer.html:32 .\templates\includes\navbar.html:105
+msgid "Discounts"
+msgstr "Discounts"
+
+#: .\templates\includes\footer.html:47
+msgid "Contact_us"
+msgstr "Contact Us"
+
+#: .\templates\includes\navbar.html:57
+msgid "All_categories"
+msgstr "All Categories"
+
+#: .\templates\includes\navbar.html:62
+msgid "Search_here"
+msgstr "Search here"
+
+#: .\templates\includes\navbar.html:63
+msgid "Search"
+msgstr "Search"
+
+#: .\templates\includes\navbar.html:78
+msgid "Menu"
+msgstr "Menu"
+
+#: .\templates\includes\navbar.html:102
+msgid "Home"
+msgstr "Home"
+
+#: .\templates\includes\navbar.html:106
+msgid "Contact"
+msgstr "Contact"
+
+#: .\templates\index.html:29
+msgid "Collection"
+msgstr "Collection"
+
+#: .\templates\index.html:30 .\templates\index.html:159
+msgid "Shop_now"
+msgstr "Shop Now"
+
+#: .\templates\index.html:55
+msgid "New_products"
+msgstr "New Products"
+
+#: .\templates\index.html:86 .\templates\index.html:209
+#: .\templates\products\product.html:187 .\templates\products\store.html:159
+#: .\templates\search_result.html:30
+msgid "NEW"
+msgstr "NEW"
+
+#: .\templates\index.html:103
+msgid "No_new_products"
+msgstr "No New Products To Show"
+
+#: .\templates\index.html:157
+msgid "Hot_deals_this_week"
+msgstr "Hot Deals This Week"
+
+#: .\templates\index.html:158
+#, python-format
+msgid "New_collection_%%_off"
+msgstr "New Collection Up To 50% Off"
+
+#: .\templates\index.html:179
+msgid "Top_sellings"
+msgstr "Top Selling"
+
+#: .\templates\index.html:226
+msgid "No_top_selling"
+msgstr "No Top Selling Products To Show"
+
+#: .\templates\index.html:258
+msgid "Sign_up_for_the"
+msgstr "Sign Up For The"
+
+#: .\templates\index.html:258
+msgid "newsletter"
+msgstr "NEWSLETTER"
+
+#: .\templates\index.html:260
+msgid "Enter_your_email"
+msgstr "Enter Your Email"
+
+#: .\templates\index.html:261
+msgid "Subscribe"
+msgstr "Subscribe"
+
+#: .\templates\products\product.html:81
+msgid "In_Stock"
+msgstr "In Stock"
+
+#: .\templates\products\product.html:83
+msgid "Out_Of_Stock"
+msgstr "Out Of Stock"
+
+#: .\templates\products\product.html:94
+msgid "Share"
+msgstr "Share"
+
+#: .\templates\products\product.html:111
+msgid "Details"
+msgstr "Details"
+
+#: .\templates\products\product.html:163
+msgid "Related_Products"
+msgstr "Related Products"
+
+#: .\templates\products\product.html:204
+msgid "No_Related_Products"
+msgstr "No Related Products To Show"
+
+#: .\templates\products\store.html:75
+msgid "Additional_filters"
+msgstr "Additional filters"
+
+#: .\templates\products\store.html:84
+msgid "On_Discount"
+msgstr "On Discount"
+
+#: .\templates\products\store.html:95
+msgid "Newly_added"
+msgstr "Newly added"
+
+#: .\templates\products\store.html:114
+msgid "Sort_by"
+msgstr "Sort By"
+
+#: .\templates\products\store.html:116
+msgid "Newest"
+msgstr "Newest"
+
+#: .\templates\products\store.html:117
+msgid "Lowest_price"
+msgstr "Lowest price"
+
+#: .\templates\products\store.html:118
+msgid "Highest_price"
+msgstr "Highest price"
+
+#: .\templates\products\store.html:139
+msgid "Applying_filter"
+msgstr "Applying filter"
+
+#: .\templates\search_result.html:12
+msgid "Search_results_for"
+msgstr "Search results for"
+
+#: .\templates\search_result.html:48
+msgid "No_results_for"
+msgstr "No search results for"
+
+#: .\templates\search_result.html:52
+msgid "in_category"
+msgstr "in category"

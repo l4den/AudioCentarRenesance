@@ -1,0 +1,218 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+		<br>
+		
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<!-- Product main img -->
+					<div class="col-md-5 col-md-push-2">
+						<div id="product-main-img">
+							<div class="product-preview">
+								<img src="{{ product.main_image.url }}" alt=""
+								style=" width: 100%;
+																height: auto;
+																max-width: 100%;
+																max-height: 100%;
+																aspect-ratio: 1 / 1;
+																object-fit: cover;">
+							</div>
+							{% for prod_img in product_gallery %}
+								<div class="product-preview">
+									<img src="{{ prod_img.image.url }}" alt=""
+									style=" width: 100%;
+																height: auto;
+																max-width: 100%;
+																max-height: 100%;
+																aspect-ratio: 1 / 1;
+																object-fit: cover;">
+								</div>
+							{% endfor %}
+						</div>
+					</div>
+					<!-- /Product main img -->
+
+					<!-- Product thumb imgs -->
+					<div class="col-md-2  col-md-pull-5">
+						<div id="product-imgs">
+							<div class="product-preview">
+								<img src="{{ product.main_image.url }}" alt=""
+								style=" width: 100%;
+																height: auto;
+																max-width: 100%;
+																max-height: 100%;
+																aspect-ratio: 1 / 1;
+																object-fit: cover;">
+							</div>
+
+							{% for prod_img in product_gallery %}
+								<div class="product-preview">
+									<img src="{{ prod_img.image.url }}" alt=""
+									style=" width: 100%;
+																height: auto;
+																max-width: 100%;
+																max-height: 100%;
+																aspect-ratio: 1 / 1;
+																object-fit: cover;">
+								</div>
+							{% endfor %}
+
+						</div>
+					</div>
+					<!-- /Product thumb imgs -->
+
+					<!-- Product details -->
+					<div class="col-md-5">
+						<div class="product-details">
+							<h2 class="product-name">{{ product.product_name }}</h2>
+							<br>
+							
+							<div>
+								<h3 class="product-price">{{ product.total_price}} den.
+								{% if product.discount != 0 %}
+									<del class="product-old-price">{{ product.price_no_discount }} den.</del></h3>
+								{% endif %}
+								{% if product.is_available %}
+									<span class="product-available">{% trans 'In_Stock' %}</span>
+								{% else %}
+									<span class="product-available">{% trans 'Out_Of_Stock' %}</span>
+								{% endif %}
+							</div>
+							<p>{{ product.description }}</p>
+							
+							<ul class="product-links">
+								<li>{% trans 'Category' %}:</li>
+								<li><a href="{% url 'store_page' %}?category={{product.category.slug}}">{{ product.category.category_name }}</a></li>
+							</ul>
+
+							<ul class="product-links">
+								<li>{% trans 'Share' %}:</li>
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+								<li><a href="#"><i class="fa fa-envelope"></i></a></li>
+							</ul>
+
+						</div>
+					</div>
+					<!-- /Product details -->
+
+					<!-- Product tab -->
+					<div class="col-md-12">
+						<div id="product-tab">
+							<!-- product tab nav -->
+							<ul class="tab-nav">
+								<li class="active"><a data-toggle="tab" href="#tab1">{% trans 'Description' %}</a></li>
+								<li><a data-toggle="tab" href="#tab2">{% trans 'Details' %}</a></li>
+								<!--
+								<li><a data-toggle="tab" href="#tab3">Reviews (3)</a></li>
+								-->
+							</ul>
+							<!-- /product tab nav -->
+
+							<!-- product tab content -->
+							<div class="tab-content">
+								<!-- tab1  -->
+								<div id="tab1" class="tab-pane fade in active">
+									<div class="row">
+										<div class="col-md-12">
+											<p>{{ product.description }}</p>
+										</div>
+									</div>
+								</div>
+								<!-- /tab1  -->
+
+								<!-- tab2  -->
+								<div id="tab2" class="tab-pane fade in">
+									<div class="row">
+										<div class="col-md-12">
+											<p>{{ product.product_info }}</p>
+										</div>
+									</div>
+								</div>
+								
+									</div>
+								</div>
+								<!-- /tab3  -->
+							</div>
+							<!-- /product tab content  -->
+						</div>
+					</div>
+					<!-- /product tab -->
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /SECTION -->
+
+		<!-- Section -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+
+					<div class="col-md-12">
+						<div class="section-title text-center">
+							<h3 class="title">{% trans 'Related_Products' %}</h3>
+						</div>
+					</div>
+
+					<!-- product -->
+					{% if related_products %}
+						{% for prod in related_products %}
+						<a href="{{ prod.get_url }}">
+							<div class="col-md-3 col-xs-6">
+								<div class="product">
+									<div class="product-img">
+										<img src="{{ prod.main_image.url }}" alt="" 
+										style=" width: 100%;
+												height: auto;
+												max-width: 100%;
+												max-height: 100%;
+												aspect-ratio: 1 / 1;
+												object-fit: cover;">
+										
+										<div class="product-label">
+											{% if prod.discount != 0%}
+												<span class="sale">-30%</span>
+											{% endif %}
+											{% if prod.is_new %}
+												<span class="new">{% trans 'NEW' %}</span>
+											{% endif %}
+										</div>
+									</div>
+									<div class="product-body">
+										<p class="product-category">{{ prod.category.category_name }}</p>
+										<h3 class="product-name">{{ prod.product_name }}</h3>
+										<h4 class="product-price">{{ prod.total_price }} den.
+										{% if prod.discount != 0%}
+											<del class="product-old-price">{{ prod.price_no_discount }}</del></h4>
+										{% endif %}
+									</div>
+								</div>
+							</div>
+						</a>		
+						{% endfor %}
+					{% else %}
+						<h3 class="text-center">{% trans 'No_Related_Products' %}</h3>	
+					{% endif %}
+					<!-- /product -->
+
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /Section -->
+
+		<!-- NEWSLETTER -->
+		
+		<!-- /NEWSLETTER -->
+{% endblock content %}

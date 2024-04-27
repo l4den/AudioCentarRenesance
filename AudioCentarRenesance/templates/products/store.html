@@ -1,0 +1,329 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+		
+		<br>
+		<!-- SECTION -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<!-- ASIDE -->
+					<div id="aside" class="col-md-3">
+						<!-- CATEGORY SELECT-->
+						<div class="aside">
+							<h3 class="aside-title">{% trans 'Categories' %}</h3>
+							<div class="checkbox-filter">
+								{% for category in categories %}
+									<div class="input-checkbox">
+										<input type="checkbox" id="{{ category.category_name }}" class="filter-checkbox"
+										 data-filter="category" value="{{ category.id }}"
+										 {% if category.slug == selected_category %} checked {% endif %}>
+										<label for="{{ category.category_name }}">
+											<span></span>
+											{{ category.category_name }}
+											<small>({{ category.product_count }})</small>
+										</label>
+									</div>
+								{% endfor %}
+							</div>
+						</div>
+						<!-- /aside Widget -->
+
+						<!-- PRICE SLIDER -->
+						<div class="aside">
+							<h3 class="aside-title">{% trans 'Price' %}</h3>
+							<div class="price-filter">
+								<div id="price-slider"></div>
+								<div class="input-number price-min">
+									<input id="price-min" type="number" value="{{ min_price }}">
+									<span class="qty-up">+</span>
+									<span class="qty-down">-</span>
+								</div>
+								<span>-</span>
+								<div class="input-number price-max">
+									<input id="price-max" type="number" value="{{ max_price }}">
+									<span class="qty-up">+</span>
+									<span class="qty-down">-</span>
+								</div>
+							</div>
+						</div>
+						<!-- /aside Widget -->
+
+						<!-- aside Widget -->
+						<div class="aside">
+							<h3 class="aside-title">{% trans 'Brands' %}</h3>
+							<div class="checkbox-filter">
+								{% for brand in brands %}
+								<div class="input-checkbox">
+									<input type="checkbox" id="{{ brand.brand_name }}" class="filter-checkbox"
+									data-filter="brand" value="{{ brand.id }}">
+									<label for="{{ brand.brand_name }}">
+										<span></span>
+										{{ brand.brand_name }}
+										<small>({{ brand.product_count }})</small>
+									</label>
+								</div>
+								{% endfor %}
+							</div>
+						</div>
+
+						<div class="aside">
+							<h3 class="aside-title">{% trans 'Additional_filters' %}</h3>
+							<div class="checkbox-filter">
+							
+								<div class="input-checkbox">
+									<input type="checkbox" id="discount" class="filter-checkbox"
+									data-filter="discount" value="yes"
+									{% if on_discount %} checked {% endif %}>
+									<label for="discount">
+										<span></span>
+										{% trans 'On_Discount' %}
+										<small>({{ discount_count }})</small>
+									</label>
+								</div>
+
+								<div class="input-checkbox">
+									<input type="checkbox" id="new" class="filter-checkbox"
+									data-filter="new" value="yes"
+									{% if is_new %} checked {% endif %}>
+									<label for="new">
+										<span></span>
+										{% trans 'Newly_added' %}
+										<small>({{ new_count }})</small>
+									</label>
+								</div>
+							
+							</div>
+						</div>
+
+						
+
+					</div>
+					<!-- /ASIDE -->
+
+					<!-- STORE -->
+					<div id="store" class="col-md-9">
+						<!-- store top filter -->
+						<div class="store-filter clearfix">
+							<div class="store-sort">
+								<label>
+									{% trans 'Sort_by' %}:
+									<select class="input-select" id="sort-select" data-filter="sort">
+										<option value="new" selected>{% trans 'Newest' %}</option>
+										<option value="low">{% trans 'Lowest_price' %}</option>
+										<option value="high">{% trans 'Highest_price' %}</option>
+									</select>
+								</label>
+								
+								<!--
+								<label>
+									Show:
+									<select class="input-select">
+										<option value="0">20</option>
+										<option value="1">50</option>
+									</select>
+								</label>
+								-->
+							</div>
+							
+						</div>
+						<!-- /store top filter -->
+
+						<!-- store products -->
+						<div class="row" id="products-list">
+							<!-- product -->
+							<h3 class="text-center ajaxLoader">{% trans 'Applying_filter' %}...</h3>
+							{% if products %}
+
+								{% for product in products%}
+								<a href="{{ product.get_url }}">
+									<div class="col-md-4 col-xs-6">
+										<div class="product" >
+											<div class="product-img">
+												<img src="{{ product.main_image.url }}" alt="" 
+												style=" width: 100%;
+														height: auto;
+														max-width: 100%;
+														max-height: 100%;
+														aspect-ratio: 1 / 1;
+														object-fit: cover;">
+												<div class="product-label">
+													{% if product.discount != 0 %}
+														<span class="sale">-{{ product.discount }}%</span>
+													{% endif%}
+													{% if product.is_new %}
+														<span class="new">{% trans 'NEW' %}</span>
+													{% endif %}
+												</div>
+											</div>
+											<div class="product-body">
+												<p class="product-category">{{ product.category.category_name }}</p>
+												<h3 class="product-name">{{ product.product_name }}</h3>
+												<h4 class="product-price">{{ product.total_price}} den. 
+													{% if product.discount != 0 %}
+														<del class="product-old-price">{{ product.price_no_discount }} den.</del>
+													{% endif %}
+												</h4>
+											</div>
+										</div>
+									</div>
+								</a>
+								{% endfor %}
+
+							{% else %}
+								<br>
+								<h3 class="text-center">{% trans 'No_products_matching' %}</h3>	
+							{% endif %}
+							<!-- product -->
+							
+						</div>
+						<!-- /store products -->
+
+						<!-- store bottom filter -->
+						<!--
+						<div class="store-filter clearfix">
+							<span class="store-qty">Showing 20-100 products</span>
+							<ul class="store-pagination">
+								<li class="active">1</li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">3</a></li>
+								<li><a href="#">4</a></li>
+								<li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+							</ul>
+						</div>
+						-->
+						<!-- /store bottom filter -->
+					</div>
+					<!-- /STORE -->
+				</div>
+				<!-- /row -->
+				<hr>
+			</div>
+			
+			<!-- /container -->
+		</div>
+		<!-- /SECTION -->
+
+		<!-- NEWSLETTER -->
+		
+		<!-- /NEWSLETTER -->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>	
+	<script>
+		$(document).ready(function(){
+
+			// PRICE SLIDER LOGIC
+			$('.input-number').each(function() {
+				var $this = $(this),
+				$input = $this.find('input[type="number"]'),
+				up = $this.find('.qty-up'),
+				down = $this.find('.qty-down');
+
+				down.on('click', function () {
+					var value = parseInt($input.val()) - 100;
+					value = value < 1 ? 1 : value;
+					$input.val(value);
+					$input.change();
+					updatePriceSlider($this , value)
+				})
+
+				up.on('click', function () {
+					var value = parseInt($input.val()) + 100;
+					$input.val(value);
+					$input.change();
+					updatePriceSlider($this , value)
+				})
+			});
+
+			var minPrice = {{ min_price }};
+        	var maxPrice = {{ max_price }};
+			console.log(minPrice);
+			console.log(maxPrice);
+
+			var priceInputMax = document.getElementById('price-max'),
+			priceInputMin = document.getElementById('price-min');
+
+			priceInputMax.addEventListener('change', function(){
+				updatePriceSlider($(this).parent() , this.value)
+			});
+
+			priceInputMin.addEventListener('change', function(){
+				updatePriceSlider($(this).parent() , this.value)
+			});
+
+			function updatePriceSlider(elem , value) {
+				if ( elem.hasClass('price-min') ) {
+					console.log('min')
+					priceSlider.noUiSlider.set([value, null]);
+				} else if ( elem.hasClass('price-max')) {
+					console.log('max')
+					priceSlider.noUiSlider.set([null, value]);
+				}
+			}
+			
+			var priceSlider = document.getElementById('price-slider');
+			if (priceSlider && !priceSlider.noUiSlider) {
+				noUiSlider.create(priceSlider, {
+					start: [minPrice, maxPrice],
+					connect: true,
+					step: 100,
+					range: {
+						'min': minPrice,
+						'max': maxPrice
+					}
+				});
+
+				priceSlider.noUiSlider.on('update', function( values, handle ) {
+					priceInputMin.value = values[0];
+  					priceInputMax.value = values[1];
+				});
+			}
+
+			// FILTER LOGIC
+
+			$(".ajaxLoader").hide();
+			$(".filter-checkbox, #sort-select, #price-min, #price-max").on("change", function(){
+				var _filterObj={};
+				// check boxes
+				$(".filter-checkbox").each(function(index, ele){
+					var _filterVal = $(this).val();
+					var _filterKey = $(this).data('filter');
+					_filterObj[_filterKey] = Array.from(document.querySelectorAll('input[data-filter=' +_filterKey+ ']:checked')).map(function(el){
+						return el.value;
+					});
+				});
+				// sort
+				var _selectVal = $("#sort-select").children(':selected').val();
+				var _selectKey = $("#sort-select").attr('data-filter');
+				_filterObj[_selectKey] = _selectVal;
+
+				// price range filter
+				_filterObj['min_price'] = parseInt(document.getElementById('price-min').value, 10);
+				_filterObj['max_price'] = parseInt(document.getElementById('price-max').value, 10);
+
+				// AJAX
+				$.ajax({
+					url:'/store/filter',
+					data:_filterObj,
+					dataType:'json',
+					beforeSend:function(){
+						$(".ajaxLoader").show();
+					},
+					success:function(res){
+						$("#products-list").html(res.data);
+						$(".ajaxLoader").hide();
+					},
+				});
+			});
+
+
+			
+
+		});
+	</script>
+
+{% endblock content %}

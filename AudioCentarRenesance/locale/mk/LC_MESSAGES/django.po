@@ -1,0 +1,329 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-24 10:53+0200\n"
+"PO-Revision-Date: 2024-04-24 11:05+0200\n"
+"Last-Translator:   <gazda@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : 1;\n"
+"X-Translated-Using: django-rosetta 0.10.0\n"
+
+#: .\AudioCentarRenesance\settings.py:128
+msgid "Macedonian"
+msgstr "македонски"
+
+#: .\AudioCentarRenesance\settings.py:129
+msgid "English"
+msgstr "англиски"
+
+#: .\AudioCentarRenesance\settings.py:130
+msgid "Albanian"
+msgstr "албански"
+
+#: .\brands\models.py:6 .\categories\models.py:6 .\products\models.py:11
+msgid "Name"
+msgstr "Име"
+
+#: .\brands\models.py:8 .\categories\models.py:8 .\products\models.py:13
+#: .\templates\products\product.html:110
+msgid "Description"
+msgstr "Опис"
+
+#: .\brands\models.py:9 .\categories\models.py:9 .\products\models.py:35
+#: .\products\models.py:61
+msgid "Image"
+msgstr "Слика"
+
+#: .\brands\models.py:12
+msgid "Brand"
+msgstr "Бренд"
+
+#: .\brands\models.py:13 .\templates\products\store.html:58
+msgid "Brands"
+msgstr "Брендови"
+
+#: .\categories\models.py:13 .\templates\products\product.html:89
+msgid "Category"
+msgstr "Категорија"
+
+#: .\categories\models.py:14 .\templates\includes\footer.html:29
+#: .\templates\includes\navbar.html:104 .\templates\products\store.html:18
+msgid "Categories"
+msgstr "Категории"
+
+#: .\contacts\models.py:7
+msgid "Subject"
+msgstr "Тема"
+
+#: .\contacts\models.py:8
+msgid "Message"
+msgstr "Порака"
+
+#: .\contacts\models.py:9 .\products\models.py:37
+msgid "Date_created"
+msgstr "Датум на креирање"
+
+#: .\contacts\models.py:12
+msgid "ContactMessage"
+msgstr "Порака"
+
+#: .\contacts\models.py:13
+msgid "ContactMessages"
+msgstr "Пораки"
+
+#: .\contacts\models.py:23
+msgid "NewsLetter"
+msgstr "Емаил од Newsletter"
+
+#: .\contacts\models.py:24
+msgid "NewsLetters"
+msgstr "Емаилови од Newsletter"
+
+#: .\products\models.py:14 .\templates\includes\footer.html:44
+msgid "Information"
+msgstr "Информација"
+
+#: .\products\models.py:16 .\templates\products\store.html:38
+msgid "Price"
+msgstr "Цена"
+
+#: .\products\models.py:17
+msgid "Discount"
+msgstr "Попуст"
+
+#: .\products\models.py:25
+msgid "Tax"
+msgstr "ДДВ"
+
+#: .\products\models.py:26
+msgid "Total_price"
+msgstr "Вкупна цена"
+
+#: .\products\models.py:28
+msgid "Stock"
+msgstr "Залиха"
+
+#: .\products\models.py:29
+msgid "Available"
+msgstr "Го има на залиха"
+
+#: .\products\models.py:30
+msgid "Top_selling"
+msgstr "Најпродаван"
+
+#: .\products\models.py:38
+msgid "Date_modified"
+msgstr "Датум на измена"
+
+#: .\products\models.py:41
+msgid "Product"
+msgstr "Продукт"
+
+#: .\products\models.py:42
+msgid "Products"
+msgstr "Продукти"
+
+#: .\products\models.py:67
+msgid "ProductGallery"
+msgstr "Слика за Продукт"
+
+#: .\products\models.py:68
+msgid "ProductGalleries"
+msgstr "Слики за Продукти"
+
+#: .\templates\ajax\product-list.html:40 .\templates\products\store.html:179
+msgid "No_products_matching"
+msgstr "Непостојат продукти соодветни на филтерите"
+
+#: .\templates\contact.html:13
+msgid "Contact_form_text"
+msgstr ""
+"Ние сме среќни да одговориме на секое прашање што го имате.\n"
+"Ве молиме користете го формуларот подолу за да не контактирате."
+
+#: .\templates\contact.html:24
+msgid "Send"
+msgstr "Прати"
+
+#: .\templates\includes\footer.html:14 .\templates\includes\footer.html:46
+#: .\templates\includes\navbar.html:107
+msgid "About_us"
+msgstr "За Нас"
+
+#: .\templates\includes\footer.html:18 .\templates\includes\navbar.html:11
+msgid "Address"
+msgstr "ул.Ѓорче Петров 124А"
+
+#: .\templates\includes\footer.html:19 .\templates\includes\navbar.html:11
+msgid "Skopje-MKD"
+msgstr "Скопје, Македонија"
+
+#: .\templates\includes\footer.html:31 .\templates\includes\navbar.html:103
+msgid "All_Products"
+msgstr "Сите Продукти"
+
+#: .\templates\includes\footer.html:32 .\templates\includes\navbar.html:105
+msgid "Discounts"
+msgstr "Попусти"
+
+#: .\templates\includes\footer.html:47
+msgid "Contact_us"
+msgstr "Контактирај не"
+
+#: .\templates\includes\navbar.html:57
+msgid "All_categories"
+msgstr "Сите Категории"
+
+#: .\templates\includes\navbar.html:62
+msgid "Search_here"
+msgstr "Пребарај тука"
+
+#: .\templates\includes\navbar.html:63
+msgid "Search"
+msgstr "Пребарај"
+
+#: .\templates\includes\navbar.html:78
+msgid "Menu"
+msgstr "Мени"
+
+#: .\templates\includes\navbar.html:102
+msgid "Home"
+msgstr "Почетна"
+
+#: .\templates\includes\navbar.html:106
+msgid "Contact"
+msgstr "Контакт"
+
+#: .\templates\index.html:29
+msgid "Collection"
+msgstr "Колекција"
+
+#: .\templates\index.html:30 .\templates\index.html:159
+msgid "Shop_now"
+msgstr "Купи Сега"
+
+#: .\templates\index.html:55
+msgid "New_products"
+msgstr "Нови Продукти"
+
+#: .\templates\index.html:86 .\templates\index.html:209
+#: .\templates\products\product.html:187 .\templates\products\store.html:159
+#: .\templates\search_result.html:30
+msgid "NEW"
+msgstr "НОВО"
+
+#: .\templates\index.html:103
+msgid "No_new_products"
+msgstr "Нема Нови Продукти"
+
+#: .\templates\index.html:157
+msgid "Hot_deals_this_week"
+msgstr "Зедлки Оваа Недела"
+
+#: .\templates\index.html:158
+#, python-format
+msgid "New_collection_%%_off"
+msgstr "До 50% Попуст На Новата Колекција"
+
+#: .\templates\index.html:179
+msgid "Top_sellings"
+msgstr "Најпродавани"
+
+#: .\templates\index.html:226
+msgid "No_top_selling"
+msgstr "Нема Најпродавани Продукти"
+
+#: .\templates\index.html:258
+msgid "Sign_up_for_the"
+msgstr "Пријави Се За "
+
+#: .\templates\index.html:258
+msgid "newsletter"
+msgstr "НОВОСТИ"
+
+#: .\templates\index.html:260
+msgid "Enter_your_email"
+msgstr "Внеси Емаил"
+
+#: .\templates\index.html:261
+msgid "Subscribe"
+msgstr "Претплати"
+
+#: .\templates\products\product.html:81
+msgid "In_Stock"
+msgstr "На Залиха"
+
+#: .\templates\products\product.html:83
+msgid "Out_Of_Stock"
+msgstr "Нема на Залиха"
+
+#: .\templates\products\product.html:94
+msgid "Share"
+msgstr "Сподели"
+
+#: .\templates\products\product.html:111
+msgid "Details"
+msgstr "Детали"
+
+#: .\templates\products\product.html:163
+msgid "Related_Products"
+msgstr "Слични Продукти"
+
+#: .\templates\products\product.html:204
+msgid "No_Related_Products"
+msgstr "Нема Слични Продукти"
+
+#: .\templates\products\store.html:75
+msgid "Additional_filters"
+msgstr "Дополнителни филтери"
+
+#: .\templates\products\store.html:84
+msgid "On_Discount"
+msgstr "На Попуст"
+
+#: .\templates\products\store.html:95
+msgid "Newly_added"
+msgstr "Најнови прво"
+
+#: .\templates\products\store.html:114
+msgid "Sort_by"
+msgstr "Сортирај според"
+
+#: .\templates\products\store.html:116
+msgid "Newest"
+msgstr "Најнови"
+
+#: .\templates\products\store.html:117
+msgid "Lowest_price"
+msgstr "Најниска цена"
+
+#: .\templates\products\store.html:118
+msgid "Highest_price"
+msgstr "Највисока цена"
+
+#: .\templates\products\store.html:139
+msgid "Applying_filter"
+msgstr "Највисока цена прво"
+
+#: .\templates\search_result.html:12
+msgid "Search_results_for"
+msgstr "Ресултати од пребарување за"
+
+#: .\templates\search_result.html:48
+msgid "No_results_for"
+msgstr "Нема резултати од пребарување за"
+
+#: .\templates\search_result.html:52
+msgid "in_category"
+msgstr "во категорија"

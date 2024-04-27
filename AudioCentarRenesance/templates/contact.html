@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+
+{% block content %}
+<br>
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div style="border: 1px solid #b3b9c8; border-radius: 5px; margin: 3%; padding: 3%;">
+                    <p class="text-center">{% trans 'Contact_form_text' %}</p>
+                    <hr>
+                    <form method="POST" action="{% url 'contact_page' %}">
+                        {% csrf_token %}
+                        {{form|crispy}}
+                        <hr>
+                        <button type="submit" style="height: 40px;
+                        width: 100px;
+                        background: #D10024;
+                        color: #FFF;
+                        font-weight: 700;
+                        border: none;">{% trans 'Send' %}</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+{% endblock content%}

@@ -1,0 +1,285 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+
+		<!-- HEADER -->
+
+		<!-- SECTION -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<!-- shop -->
+					{% for cat in top_3_categories %}
+					<div class="col-md-4 col-xs-6">
+						<div class="shop">
+							<div class="shop-img" style="height: 50%;">
+								<img src="{{ cat.image.url }}" alt="" 
+								style=" width: 100%;
+																height: auto;
+																max-width: 100%;
+																max-height: 100%;
+																aspect-ratio: 3 / 2;
+																object-fit: cover;">
+							</div>
+							<div class="shop-body">
+								<h3>{{ cat.category_name}}<br>{% trans 'Collection' %}</h3>
+								<a href="{% url 'store_page' %}?category={{ cat.slug}}" class="cta-btn">{% trans 'Shop_now' %} <i class="fa fa-arrow-circle-right"></i></a>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+					<!-- /shop -->
+
+					<!-- /shop -->
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /SECTION -->
+
+		<!-- SECTION -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				{% if new_products %}
+				<div class="row">
+
+					<!-- section title -->
+					<div class="col-md-12">
+						<div class="section-title">
+							<h3 class="title">{% trans 'New_products' %}</h3>
+							
+						</div>
+					</div>
+					<!-- /section title -->
+
+					<!-- Products tab & slick -->
+					<div class="col-md-12">
+						<div class="row">
+							<div class="products-tabs">
+								<!-- tab -->
+								<div id="tab1" class="tab-pane active">
+									<div class="products-slick" data-nav="#slick-nav-1">
+										<!-- product -->
+											{% for prod in new_products %}
+												
+													<div class="product">
+														<a href="{{ prod.get_url }}">
+															<div class="product-img">
+																<img src="{{ prod.main_image.url }}" alt="" 
+																style=" width: 100%;
+																height: auto;
+																max-width: 100%;
+																max-height: 100%;
+																aspect-ratio: 1 / 1;
+																object-fit: cover;">
+																<div class="product-label">
+																	{% if prod.discount != 0 %}
+																		<span class="sale">-30%</span>
+																	{% endif %}
+																	<span class="new">{% trans 'NEW' %}</span>
+																</div>
+															</div>
+															<div class="product-body">
+																<p class="product-category">{{ prod.category.category_name }}</p>
+																<h3 class="product-name">{{ prod.product_name }}</h3>
+																<h4 class="product-price">{{ prod.total_price}} den.
+																{% if prod.discount != 0 %}	
+																	<del class="product-old-price">{{ prod.price_no_discount }}</del></h4>
+																{% endif%}
+															</div>
+														</a>
+													</div>
+												
+											{% endfor %}
+									</div>
+									<div id="slick-nav-1" class="products-slick-nav"></div>
+								</div>
+								<!-- /tab -->
+							</div>
+						</div>
+					</div>
+					<!-- Products tab & slick -->
+				</div>
+				<!-- /row -->
+			</div>
+			{% endif %}
+			<!-- /container -->
+		</div>
+		<!-- /SECTION -->
+
+		<!-- HOT DEAL SECTION -->
+		<div id="hot-deal" class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-12">
+						<div class="hot-deal" style="height: 250px;">
+							<!--
+							<ul class="hot-deal-countdown">
+								<li>
+									<div>
+										<h3>02</h3>
+										<span>Days</span>
+									</div>
+								</li>
+								<li>
+									<div>
+										<h3>10</h3>
+										<span>Hours</span>
+									</div>
+								</li>
+								<li>
+									<div>
+										<h3>34</h3>
+										<span>Mins</span>
+									</div>
+								</li>
+								<li>
+									<div>
+										<h3>60</h3>
+										<span>Secs</span>
+									</div>
+								</li>
+							</ul>
+							-->
+							<h2 class="text-uppercase">{% trans 'Hot_deals_this_week' %}</h2>
+							<p>{% trans 'New_collection_%_off' %}</p>
+							<a class="primary-btn cta-btn" href="{% url 'store_page' %}?on_discount=yes&is_new=yes">{% trans 'Shop_now' %}</a>
+						</div>
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /HOT DEAL SECTION -->
+
+		<!-- TOP SELLING DESKTOP -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+
+					<!-- section title -->
+					<div class="col-md-12">
+						<div class="section-title">
+							<h3 class="title">{% trans 'Top_sellings' %}</h3>
+						</div>
+					</div>
+					<!-- /section title -->
+
+					<!-- TOP SELLING DESKTOP -->
+					<div class="col-md-12">
+						<div class="row">
+							<div class="products-tabs">
+								<!-- tab -->
+								<div id="tab2" class="tab-pane fade in active">
+									<div class="products-slick" data-nav="#slick-nav-2">
+										<!-- product -->
+										{% if top_selling_products %}
+											{% for prod in top_selling_products %}
+												<div class="product">
+													<a href="{{ prod.get_url }}">
+														<div class="product-img">
+															<img src="{{ prod.main_image.url}}" alt=""
+															style=" width: 100%;
+																height: auto;
+																max-width: 100%;
+																max-height: 100%;
+																aspect-ratio: 1 / 1;
+																object-fit: cover;">
+															<div class="product-label">
+																{% if prod.discount != 0 %}
+																	<span class="sale">-{{ prod.discount }}%</span>
+																{% endif %}
+																{% if prod.is_new %}
+																	<span class="new">{% trans 'NEW' %}</span>
+																{% endif %}
+															</div>
+														</div>
+														<div class="product-body">
+															<p class="product-category">{{ prod.category.category_name }}</p>
+															<h3 class="product-name">{{ prod.product_name }}</h3>
+															<h4 class="product-price">{{ prod.total_price }} den.
+																{% if prod.discount != 0 %}
+																	<del class="product-old-price">{{ prod.price_no_discount }} den.</del>
+																{% endif %}
+															</h4>
+														</div>
+													</a>
+												</div>
+											{% endfor %}
+										{% else%}
+											<h3 class="text-center">{% trans 'No_top_selling' %}</h3>
+										{% endif%}
+										<!-- /product -->
+
+										
+									</div>
+									<div id="slick-nav-2" class="products-slick-nav"></div>
+								</div>
+								<!-- /tab -->
+							</div>
+						</div>
+					</div>
+					<!-- /Products tab & slick -->
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /TOP SELLING DESKTOP -->
+
+		<!-- TOP SELLING PHONE -->
+		
+		<!-- /SECTION -->
+
+		<!-- NEWSLETTER -->
+		<div id="newsletter" class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-12">
+						<div class="newsletter">
+							<p>{% trans 'Sign_up_for_the' %} <strong>{% trans 'newsletter' %}</strong></p>
+							<form method="GET" action="{% url 'newsletter' %}">
+								<input class="input" type="email" placeholder="{% trans 'Enter_your_email' %}" name="newsletter">
+								<button class="newsletter-btn" type="submit"><i class="fa fa-envelope"></i> {% trans 'Subscribe' %}</button>
+							</form>
+							<ul class="newsletter-follow">
+								<li>
+									<a href="#"><i class="fa fa-facebook"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-twitter"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-instagram"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-pinterest"></i></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /NEWSLETTER -->
+
+		<!-- FOOTER -->
+		
+		<!-- /FOOTER -->
+{% endblock content %}
