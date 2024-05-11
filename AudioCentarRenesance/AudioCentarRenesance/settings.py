@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'products',
     'brands',
     'contacts',
+    'about_us',
     # 3rd party
     'admin_thumbnails',
     'crispy_forms',

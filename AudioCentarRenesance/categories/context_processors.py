@@ -1,6 +1,8 @@
-from .models import Category
+from .models import MainCategory, SubCategory
 
 
 def menu_links(request):
-    categories = Category.objects.all()
-    return dict(categories=categories)
+    categories = MainCategory.objects.all()
+    subcategories = SubCategory.objects.all()
+    store_paths = ['/mk/store/', '/en/store/', '/sq/store/']
+    return dict(categories=categories, subcategories=subcategories, store_paths=store_paths)

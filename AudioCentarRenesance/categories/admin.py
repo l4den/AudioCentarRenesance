@@ -1,13 +1,18 @@
 from django.contrib import admin
-from .models import Category
+from .models import MainCategory, SubCategory
 import admin_thumbnails
 
 
 @admin_thumbnails.thumbnail('image')
-class CategoryAdmin(admin.ModelAdmin):
+class MainCategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('category_name', )}
     list_display = ('category_name', 'slug',)
 
+class SubCategoryAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug': ('category_name', )}
+    list_display = ('category_name', 'slug', 'parent')
 
-admin.site.register(Category, CategoryAdmin)
+
+admin.site.register(MainCategory, MainCategoryAdmin)
+admin.site.register(SubCategory, SubCategoryAdmin)
 

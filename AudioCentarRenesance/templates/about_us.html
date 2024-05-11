@@ -9,25 +9,16 @@
         <div class="row">
             <div class="col-md-12 text-center">
                 <h3>We are Renesanca Inzinjering</h3>
-                <p>We sell all the top leading technologies ranging for security cameras to car equipment and much more. 
-                    <br>
-                    We are located in Gjorce Petrov.
-                    <br>
-                    We were founded in 2010 by Saveski Slobodan.
-                </p>
+                <p>{{ text.text|linebreaks }}</p>
             </div>
         </div>
 
         <div class="row">
+            {% for image in images %}
             <div class="col-lg-4 col-md-4">
-                <img src="{% static 'img/about_us_img_1.jpg' %}" style="width: 100%; height: 100%;">
+                <img src="{{ image.image.url }}" style="width: 100%; height: 100%;">
             </div>
-            <div class="col-lg-4 col-md-4">
-                <img src="{% static 'img/about_us_img_2.jpg' %}" style="width: 100%; height: 100%;">
-            </div>
-            <div class="col-lg-4 col-md-4">
-                <img src="{% static 'img/about_us_img_3.jpg' %}" style="width: 100%; height: 100%;">
-            </div>
+            {% endfor %}
         </div>
     </div>
 </div>

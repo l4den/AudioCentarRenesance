@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-24 10:53+0200\n"
-"PO-Revision-Date: 2024-04-22 16:34+0200\n"
+"POT-Creation-Date: 2024-04-30 13:22+0200\n"
+"PO-Revision-Date: 2024-04-30 13:23+0200\n"
 "Last-Translator:   <gazda@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,28 +19,29 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.10.0\n"
 
-#: .\AudioCentarRenesance\settings.py:128
+#: .\AudioCentarRenesance\settings.py:130
 msgid "Macedonian"
 msgstr "macedonian"
 
-#: .\AudioCentarRenesance\settings.py:129
+#: .\AudioCentarRenesance\settings.py:131
 msgid "English"
 msgstr "english"
 
-#: .\AudioCentarRenesance\settings.py:130
+#: .\AudioCentarRenesance\settings.py:132
 msgid "Albanian"
 msgstr "albanian"
 
-#: .\brands\models.py:6 .\categories\models.py:6 .\products\models.py:11
+#: .\brands\models.py:6 .\categories\models.py:5 .\categories\models.py:22
+#: .\products\models.py:11
 msgid "Name"
 msgstr "Name"
 
-#: .\brands\models.py:8 .\categories\models.py:8 .\products\models.py:13
-#: .\templates\products\product.html:110
+#: .\brands\models.py:8 .\categories\models.py:7 .\categories\models.py:24
+#: .\products\models.py:13 .\templates\products\product.html:110
 msgid "Description"
 msgstr "Description"
 
-#: .\brands\models.py:9 .\categories\models.py:9 .\products\models.py:35
+#: .\brands\models.py:9 .\categories\models.py:8 .\products\models.py:35
 #: .\products\models.py:61
 msgid "Image"
 msgstr "Image"
@@ -53,14 +54,25 @@ msgstr "Brand"
 msgid "Brands"
 msgstr "Brands"
 
-#: .\categories\models.py:13 .\templates\products\product.html:89
-msgid "Category"
-msgstr "Category"
+#: .\categories\models.py:11
+#| msgid "Category"
+msgid "MainCategory"
+msgstr "Main category"
 
-#: .\categories\models.py:14 .\templates\includes\footer.html:29
-#: .\templates\includes\navbar.html:104 .\templates\products\store.html:18
-msgid "Categories"
-msgstr "Categories"
+#: .\categories\models.py:12
+#| msgid "Categories"
+msgid "MainCategories"
+msgstr "Main categories"
+
+#: .\categories\models.py:28
+#| msgid "Category"
+msgid "SubCategory"
+msgstr "Sub category"
+
+#: .\categories\models.py:29
+#| msgid "Categories"
+msgid "SubCategories"
+msgstr "Sub categories"
 
 #: .\contacts\models.py:7
 msgid "Subject"
@@ -169,6 +181,11 @@ msgstr "ul.Gjorce Petrov 124A"
 msgid "Skopje-MKD"
 msgstr "Skopje, Macedonia"
 
+#: .\templates\includes\footer.html:29 .\templates\includes\navbar.html:104
+#: .\templates\products\store.html:18
+msgid "Categories"
+msgstr "Categories"
+
 #: .\templates\includes\footer.html:31 .\templates\includes\navbar.html:103
 msgid "All_Products"
 msgstr "All Products"
@@ -189,10 +206,6 @@ msgstr "All Categories"
 msgid "Search_here"
 msgstr "Search here"
 
-#: .\templates\includes\navbar.html:63
-msgid "Search"
-msgstr "Search"
-
 #: .\templates\includes\navbar.html:78
 msgid "Menu"
 msgstr "Menu"
@@ -209,54 +222,50 @@ msgstr "Contact"
 msgid "Collection"
 msgstr "Collection"
 
-#: .\templates\index.html:30 .\templates\index.html:159
+#: .\templates\index.html:30 .\templates\index.html:127
 msgid "Shop_now"
 msgstr "Shop Now"
 
-#: .\templates\index.html:55
+#: .\templates\index.html:56
 msgid "New_products"
 msgstr "New Products"
 
-#: .\templates\index.html:86 .\templates\index.html:209
+#: .\templates\index.html:86 .\templates\index.html:177
 #: .\templates\products\product.html:187 .\templates\products\store.html:159
 #: .\templates\search_result.html:30
 msgid "NEW"
 msgstr "NEW"
 
-#: .\templates\index.html:103
-msgid "No_new_products"
-msgstr "No New Products To Show"
-
-#: .\templates\index.html:157
+#: .\templates\index.html:125
 msgid "Hot_deals_this_week"
 msgstr "Hot Deals This Week"
 
-#: .\templates\index.html:158
+#: .\templates\index.html:126
 #, python-format
 msgid "New_collection_%%_off"
 msgstr "New Collection Up To 50% Off"
 
-#: .\templates\index.html:179
+#: .\templates\index.html:147
 msgid "Top_sellings"
 msgstr "Top Selling"
 
-#: .\templates\index.html:226
+#: .\templates\index.html:194
 msgid "No_top_selling"
 msgstr "No Top Selling Products To Show"
 
-#: .\templates\index.html:258
+#: .\templates\index.html:226
 msgid "Sign_up_for_the"
 msgstr "Sign Up For The"
 
-#: .\templates\index.html:258
+#: .\templates\index.html:226
 msgid "newsletter"
 msgstr "NEWSLETTER"
 
-#: .\templates\index.html:260
+#: .\templates\index.html:228
 msgid "Enter_your_email"
 msgstr "Enter Your Email"
 
-#: .\templates\index.html:261
+#: .\templates\index.html:229
 msgid "Subscribe"
 msgstr "Subscribe"
 
@@ -267,6 +276,10 @@ msgstr "In Stock"
 #: .\templates\products\product.html:83
 msgid "Out_Of_Stock"
 msgstr "Out Of Stock"
+
+#: .\templates\products\product.html:89
+msgid "Category"
+msgstr "Category"
 
 #: .\templates\products\product.html:94
 msgid "Share"
@@ -327,3 +340,9 @@ msgstr "No search results for"
 #: .\templates\search_result.html:52
 msgid "in_category"
 msgstr "in category"
+
+#~ msgid "Search"
+#~ msgstr "Search"
+
+#~ msgid "No_new_products"
+#~ msgstr "No New Products To Show"

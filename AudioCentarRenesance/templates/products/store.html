@@ -13,14 +13,14 @@
 				<div class="row">
 					<!-- ASIDE -->
 					<div id="aside" class="col-md-3">
-						<!-- CATEGORY SELECT-->
+						<!-- MAIN CATEGORY SELECT-->
 						<div class="aside">
 							<h3 class="aside-title">{% trans 'Categories' %}</h3>
 							<div class="checkbox-filter">
-								{% for category in categories %}
+								{% for category in main_categories %}
 									<div class="input-checkbox">
 										<input type="checkbox" id="{{ category.category_name }}" class="filter-checkbox"
-										 data-filter="category" value="{{ category.id }}"
+										 data-filter="category" data-id="{{category.id}}" value="{{ category.id }}"
 										 {% if category.slug == selected_category %} checked {% endif %}>
 										<label for="{{ category.category_name }}">
 											<span></span>
@@ -28,6 +28,23 @@
 											<small>({{ category.product_count }})</small>
 										</label>
 									</div>
+
+									<!-- SUB CATEGORIES -->
+									{% for sub_category in sub_categories %}
+										{% if sub_category.parent == category %}
+											<div class="input-checkbox" style="margin-left: 20px;">
+												<input type="checkbox" id="{{ sub_category.category_name }}" class="filter-checkbox"
+												data-filter="sub_category" data-parent-id="{{ category.id }}" value="{{ sub_category.id }}"
+												{% for sub_cat in selected_sub_category%}{% if sub_category.slug == sub_cat %} checked {% endif %}{% endfor %}>
+												<label for="{{ sub_category.category_name }}">
+													<span></span>
+													{{ sub_category.category_name }}
+													<small>({{ sub_category.product_count }})</small>
+												</label>
+											</div>
+										{% endif%}
+									{% endfor %}
+									<hr>
 								{% endfor %}
 							</div>
 						</div>
@@ -51,9 +68,9 @@
 								</div>
 							</div>
 						</div>
-						<!-- /aside Widget -->
+						
 
-						<!-- aside Widget -->
+						<!-- BRANDS -->
 						<div class="aside">
 							<h3 class="aside-title">{% trans 'Brands' %}</h3>
 							<div class="checkbox-filter">
@@ -71,10 +88,12 @@
 							</div>
 						</div>
 
+						<!-- EXTRA FILTERS -->
 						<div class="aside">
 							<h3 class="aside-title">{% trans 'Additional_filters' %}</h3>
 							<div class="checkbox-filter">
 							
+								<!-- ON DISCOUNT -->
 								<div class="input-checkbox">
 									<input type="checkbox" id="discount" class="filter-checkbox"
 									data-filter="discount" value="yes"
@@ -86,6 +105,7 @@
 									</label>
 								</div>
 
+								<!-- NEWEST -->
 								<div class="input-checkbox">
 									<input type="checkbox" id="new" class="filter-checkbox"
 									data-filter="new" value="yes"
@@ -96,18 +116,12 @@
 										<small>({{ new_count }})</small>
 									</label>
 								</div>
-							
+
 							</div>
 						</div>
-
-						
-
 					</div>
-					<!-- /ASIDE -->
-
-					<!-- STORE -->
+	
 					<div id="store" class="col-md-9">
-						<!-- store top filter -->
 						<div class="store-filter clearfix">
 							<div class="store-sort">
 								<label>
@@ -118,22 +132,9 @@
 										<option value="high">{% trans 'Highest_price' %}</option>
 									</select>
 								</label>
-								
-								<!--
-								<label>
-									Show:
-									<select class="input-select">
-										<option value="0">20</option>
-										<option value="1">50</option>
-									</select>
-								</label>
-								-->
 							</div>
-							
 						</div>
-						<!-- /store top filter -->
-
-						<!-- store products -->
+					
 						<div class="row" id="products-list">
 							<!-- product -->
 							<h3 class="text-center ajaxLoader">{% trans 'Applying_filter' %}...</h3>
@@ -178,39 +179,14 @@
 								<br>
 								<h3 class="text-center">{% trans 'No_products_matching' %}</h3>	
 							{% endif %}
-							<!-- product -->
-							
 						</div>
-						<!-- /store products -->
-
-						<!-- store bottom filter -->
-						<!--
-						<div class="store-filter clearfix">
-							<span class="store-qty">Showing 20-100 products</span>
-							<ul class="store-pagination">
-								<li class="active">1</li>
-								<li><a href="#">2</a></li>
-								<li><a href="#">3</a></li>
-								<li><a href="#">4</a></li>
-								<li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-							</ul>
-						</div>
-						-->
-						<!-- /store bottom filter -->
 					</div>
-					<!-- /STORE -->
 				</div>
-				<!-- /row -->
 				<hr>
 			</div>
 			
-			<!-- /container -->
 		</div>
-		<!-- /SECTION -->
-
-		<!-- NEWSLETTER -->
 		
-		<!-- /NEWSLETTER -->
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>	
 	<script>
@@ -241,8 +217,8 @@
 
 			var minPrice = {{ min_price }};
         	var maxPrice = {{ max_price }};
-			console.log(minPrice);
-			console.log(maxPrice);
+			//console.log(minPrice);
+			//console.log(maxPrice);
 
 			var priceInputMax = document.getElementById('price-max'),
 			priceInputMin = document.getElementById('price-min');
@@ -282,9 +258,33 @@
   					priceInputMax.value = values[1];
 				});
 			}
+			// MAIN CATEGORY SELECT SELECTS ALL SUB CATEGORIES
+			$('.filter-checkbox[data-filter="category"]').on("change", function(){
+				var isChecked = $(this).is(':checked');
+				var categoryId = $(this).val();
+
+				$('.filter-checkbox[data-filter="sub_category"]').each(function() {
+					if ($(this).data('parent-id') == categoryId) {
+						$(this).prop('checked', isChecked);
+					}
+				});
+			});
+
+			// DESELECT SUBCATEGORY DESELECTS THE MAIN
+			$('.filter-checkbox[data-filter="sub_category"]').on("change", function(){
+				var isChecked = $(this).is(':checked');
+				var categoryId = $(this).val();
+
+				if (!isChecked){
+					parentId = $(this).data('parent-id')
+					
+					$('.filter-checkbox[data-filter="category"][data-id="' + parentId + '"]').prop('checked', false);
+				}
+			});
+
+
 
 			// FILTER LOGIC
-
 			$(".ajaxLoader").hide();
 			$(".filter-checkbox, #sort-select, #price-min, #price-max").on("change", function(){
 				var _filterObj={};
@@ -305,6 +305,8 @@
 				_filterObj['min_price'] = parseInt(document.getElementById('price-min').value, 10);
 				_filterObj['max_price'] = parseInt(document.getElementById('price-max').value, 10);
 
+				console.log(_filterObj)
+
 				// AJAX
 				$.ajax({
 					url:'/store/filter',
@@ -319,9 +321,6 @@
 					},
 				});
 			});
-
-
-			
 
 		});
 	</script>

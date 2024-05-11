@@ -181,7 +181,7 @@
 										
 										<div class="product-label">
 											{% if prod.discount != 0%}
-												<span class="sale">-30%</span>
+												<span class="sale">-{{prod.discount}}%</span>
 											{% endif %}
 											{% if prod.is_new %}
 												<span class="new">{% trans 'NEW' %}</span>

@@ -13,8 +13,8 @@
 				<!-- row -->
 				<div class="row">
 					<!-- shop -->
-					{% for cat in top_3_categories %}
-					<div class="col-md-4 col-xs-6">
+					{% for cat in main_categories %}
+					<div class="col-md-3 col-xs-6">
 						<div class="shop">
 							<div class="shop-img" style="height: 50%;">
 								<img src="{{ cat.image.url }}" alt="" 
@@ -81,7 +81,7 @@
 																object-fit: cover;">
 																<div class="product-label">
 																	{% if prod.discount != 0 %}
-																		<span class="sale">-30%</span>
+																		<span class="sale">-{{ prod.discount }}%</span>
 																	{% endif %}
 																	<span class="new">{% trans 'NEW' %}</span>
 																</div>
@@ -122,34 +122,6 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="hot-deal" style="height: 250px;">
-							<!--
-							<ul class="hot-deal-countdown">
-								<li>
-									<div>
-										<h3>02</h3>
-										<span>Days</span>
-									</div>
-								</li>
-								<li>
-									<div>
-										<h3>10</h3>
-										<span>Hours</span>
-									</div>
-								</li>
-								<li>
-									<div>
-										<h3>34</h3>
-										<span>Mins</span>
-									</div>
-								</li>
-								<li>
-									<div>
-										<h3>60</h3>
-										<span>Secs</span>
-									</div>
-								</li>
-							</ul>
-							-->
 							<h2 class="text-uppercase">{% trans 'Hot_deals_this_week' %}</h2>
 							<p>{% trans 'New_collection_%_off' %}</p>
 							<a class="primary-btn cta-btn" href="{% url 'store_page' %}?on_discount=yes&is_new=yes">{% trans 'Shop_now' %}</a>
@@ -278,6 +250,58 @@
 			<!-- /container -->
 		</div>
 		<!-- /NEWSLETTER -->
+		<div class="section" style="background-color: rgb(58, 58, 58);">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+
+					<!-- section title -->
+					<div class="col-md-12">
+						<div class="section-title" style=" text-align: center;">
+							<p class="title" style="color: white; background-color: #d10024; padding: 3px; font-weight: bold;">Застапници на брендови</p>
+						</div>
+					</div>
+					
+					<!-- /section title -->
+
+					<!-- TOP SELLING DESKTOP -->
+					<div class="col-md-12">
+						<div class="row">
+							<div class="products-tabs">
+								<!-- tab -->
+								<div id="tab3" class="tab-pane fade in active">
+									<div class="products-slick" data-nav="#slick-nav-3">
+										<!-- product -->
+											{% for brand in brands %}
+												<div style="padding: 5px;">
+														<div class="product-img">
+															<img src="{{ brand.image.url}}" alt=""
+															style=" width: 100%;
+																height: auto;
+																max-width: 100%;
+																max-height: 100%;
+																aspect-ratio: 1 / 1;
+																object-fit: contain;
+																opacity: 0.5;">
+														</div>											
+												</div>
+											{% endfor %}
+										
+										<!-- /product -->
+									</div>
+									<div id="slick-nav-3" class="products-slick-nav"></div>
+								</div>
+								<!-- /tab -->
+							</div>
+						</div>
+					</div>
+					<!-- /Products tab & slick -->
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
 
 		<!-- FOOTER -->
 		

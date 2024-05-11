@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils import timezone
-from categories.models import Category
+from categories.models import SubCategory
 from brands.models import Brand
 from django.urls import reverse
 import math
@@ -29,7 +29,7 @@ class Product(models.Model):
     is_available = models.BooleanField(_('Available'), default=True)
     top_selling = models.BooleanField(_('Top_selling'), default=False)
 
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)    # if cateogry is deleted all products in that category will be deleted
+    category = models.ForeignKey(SubCategory, on_delete=models.CASCADE)    # if cateogry is deleted all products in that category will be deleted
     brand = models.ForeignKey(Brand , on_delete=models.CASCADE)
 
     main_image = models.ImageField(_('Image'), default='default_product_img.jpg', upload_to='products')

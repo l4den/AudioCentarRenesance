@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-24 10:53+0200\n"
-"PO-Revision-Date: 2024-04-22 16:36+0200\n"
+"POT-Creation-Date: 2024-04-30 13:22+0200\n"
+"PO-Revision-Date: 2024-04-30 13:24+0200\n"
 "Last-Translator:   <gazda@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,28 +19,29 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.10.0\n"
 
-#: .\AudioCentarRenesance\settings.py:128
+#: .\AudioCentarRenesance\settings.py:130
 msgid "Macedonian"
 msgstr "maqedonisht"
 
-#: .\AudioCentarRenesance\settings.py:129
+#: .\AudioCentarRenesance\settings.py:131
 msgid "English"
 msgstr "anglisht"
 
-#: .\AudioCentarRenesance\settings.py:130
+#: .\AudioCentarRenesance\settings.py:132
 msgid "Albanian"
 msgstr "shqip"
 
-#: .\brands\models.py:6 .\categories\models.py:6 .\products\models.py:11
+#: .\brands\models.py:6 .\categories\models.py:5 .\categories\models.py:22
+#: .\products\models.py:11
 msgid "Name"
 msgstr "Emri"
 
-#: .\brands\models.py:8 .\categories\models.py:8 .\products\models.py:13
-#: .\templates\products\product.html:110
+#: .\brands\models.py:8 .\categories\models.py:7 .\categories\models.py:24
+#: .\products\models.py:13 .\templates\products\product.html:110
 msgid "Description"
 msgstr "Përshkrim"
 
-#: .\brands\models.py:9 .\categories\models.py:9 .\products\models.py:35
+#: .\brands\models.py:9 .\categories\models.py:8 .\products\models.py:35
 #: .\products\models.py:61
 msgid "Image"
 msgstr "Imazh"
@@ -53,14 +54,25 @@ msgstr "Markë"
 msgid "Brands"
 msgstr "Marka"
 
-#: .\categories\models.py:13 .\templates\products\product.html:89
-msgid "Category"
-msgstr "Kategoria"
+#: .\categories\models.py:11
+#| msgid "Category"
+msgid "MainCategory"
+msgstr "Kategoria kryesore"
 
-#: .\categories\models.py:14 .\templates\includes\footer.html:29
-#: .\templates\includes\navbar.html:104 .\templates\products\store.html:18
-msgid "Categories"
-msgstr "Kategoritë"
+#: .\categories\models.py:12
+#| msgid "Categories"
+msgid "MainCategories"
+msgstr "Kategoritë kryesore"
+
+#: .\categories\models.py:28
+#| msgid "Category"
+msgid "SubCategory"
+msgstr "Sub category"
+
+#: .\categories\models.py:29
+#| msgid "Categories"
+msgid "SubCategories"
+msgstr "Nën kategoritë"
 
 #: .\contacts\models.py:7
 msgid "Subject"
@@ -169,6 +181,11 @@ msgstr "ul.Gjorce Petrov 124A"
 msgid "Skopje-MKD"
 msgstr "Shkup, Maqedoni"
 
+#: .\templates\includes\footer.html:29 .\templates\includes\navbar.html:104
+#: .\templates\products\store.html:18
+msgid "Categories"
+msgstr "Kategoritë"
+
 #: .\templates\includes\footer.html:31 .\templates\includes\navbar.html:103
 msgid "All_Products"
 msgstr "Të gjitha Produktet"
@@ -189,10 +206,6 @@ msgstr "Të Gjitha Kategoritë"
 msgid "Search_here"
 msgstr "Kërko këtu"
 
-#: .\templates\includes\navbar.html:63
-msgid "Search"
-msgstr "Kërko"
-
 #: .\templates\includes\navbar.html:78
 msgid "Menu"
 msgstr "Menu"
@@ -209,54 +222,50 @@ msgstr "Kontaktoni"
 msgid "Collection"
 msgstr "Mbledhja"
 
-#: .\templates\index.html:30 .\templates\index.html:159
+#: .\templates\index.html:30 .\templates\index.html:127
 msgid "Shop_now"
 msgstr "Bli Tani"
 
-#: .\templates\index.html:55
+#: .\templates\index.html:56
 msgid "New_products"
 msgstr "Produkte të reja"
 
-#: .\templates\index.html:86 .\templates\index.html:209
+#: .\templates\index.html:86 .\templates\index.html:177
 #: .\templates\products\product.html:187 .\templates\products\store.html:159
 #: .\templates\search_result.html:30
 msgid "NEW"
 msgstr "I RI"
 
-#: .\templates\index.html:103
-msgid "No_new_products"
-msgstr "Nuk ka produkte të reja për t'u shfaqur"
-
-#: .\templates\index.html:157
+#: .\templates\index.html:125
 msgid "Hot_deals_this_week"
 msgstr "Oferta të nxehta këtë javë"
 
-#: .\templates\index.html:158
+#: .\templates\index.html:126
 #, python-format
 msgid "New_collection_%%_off"
 msgstr "Koleksioni i ri Deri në 50% Zbritje"
 
-#: .\templates\index.html:179
+#: .\templates\index.html:147
 msgid "Top_sellings"
 msgstr "më të shitura"
 
-#: .\templates\index.html:226
+#: .\templates\index.html:194
 msgid "No_top_selling"
 msgstr "Nuk ka produkte më të shitur për të treguar"
 
-#: .\templates\index.html:258
+#: .\templates\index.html:226
 msgid "Sign_up_for_the"
 msgstr "Regjistrohu Për"
 
-#: .\templates\index.html:258
+#: .\templates\index.html:226
 msgid "newsletter"
 msgstr "GAZETE"
 
-#: .\templates\index.html:260
+#: .\templates\index.html:228
 msgid "Enter_your_email"
 msgstr "Shkruani Email-in tuaj"
 
-#: .\templates\index.html:261
+#: .\templates\index.html:229
 msgid "Subscribe"
 msgstr "Abonohu"
 
@@ -267,6 +276,10 @@ msgstr "Në magazinë"
 #: .\templates\products\product.html:83
 msgid "Out_Of_Stock"
 msgstr "Jashtë në gjendje"
+
+#: .\templates\products\product.html:89
+msgid "Category"
+msgstr "Kategoria"
 
 #: .\templates\products\product.html:94
 msgid "Share"
@@ -327,3 +340,9 @@ msgstr "Nuk ka rezultate kërkimi për"
 #: .\templates\search_result.html:52
 msgid "in_category"
 msgstr "në kategori"
+
+#~ msgid "Search"
+#~ msgstr "Kërko"
+
+#~ msgid "No_new_products"
+#~ msgstr "Nuk ka produkte të reja për t'u shfaqur"

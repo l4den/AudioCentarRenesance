@@ -6,12 +6,12 @@
 		<div id="top-header">
 				<div class="container">
 					<ul class="header-links pull-left">
-						<li><a href="#"><i class="fa fa-phone"></i> +389 2 20 33 049</a></li>
+						<li><a href="#"><i class="fa fa-phone"></i> 070 228 622</a></li>
 						<li><a href="#"><i class="fa fa-envelope-o"></i>caraudio@t.mk</a></li>
 						<li><a href="https://www.google.com/maps/place/ACR/@42.0059633,21.3479117,18z/data=!4m9!1m2!2m1!1sul.Gjorce+Petrov+124,+Skopje!3m5!1s0x135413284d7fb66f:0x37abb878c779fc82!8m2!3d42.0061901!4d21.3474989!16s%2Fg%2F11h3yhmxm0?entry=ttu"><i class="fa fa-map-marker"></i> {% trans 'Address' %}, {% trans 'Skopje-MKD' %}</a></li>
 					</ul>
 					<ul class="header-links pull-right">
-						<div>
+                        <div>
                             {% get_current_language as CURRENT_LANGUAGE %}
                             {% get_available_languages as AVAILABLE_LANGUAGES %}
                             {% get_language_info_list for AVAILABLE_LANGUAGES as languages %}
@@ -56,11 +56,11 @@
                             <select class="input-select" name="category">
                                 <option value="all">{% trans 'All_categories' %}</option>
                                 {% for category in categories %}
-                                    <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                                    <option value="{{ category.slug }}">{{ category.category_name }}</option>
                                 {% endfor %}
                             </select>
                             <input class="input" placeholder="{% trans 'Search_here' %}" name="keyword">
-                            <button class="search-btn" type="submit">{% trans 'Search' %}</button>
+                            <button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
                         </form>
                     </div>
                 </div>
@@ -99,12 +99,29 @@
         <div id="responsive-nav">
             <!-- NAV -->
             <ul class="main-nav nav navbar-nav">
-                <li {% if request.path == '/' %}class="active"{% endif %}><a href="{% url 'home_page' %}">{% trans 'Home' %}</a></li>
-                <li {% if request.path == '/store/' and not request.GET.on_discount == "yes" %}class="active"{% endif %}><a href="{% url 'store_page' %}">{% trans 'All_Products' %}</a></li>
-                <li {% if request.path == '/categories/all' %}class="active"{% endif %}><a href="{% url 'all_categories_page' %}">{% trans 'Categories' %}</a></li>
+                <li {% if request.path == '/mk/' or request.path == '/en/' or request.path == '/sq/' %}class="active"{% endif %}><a href="{% url 'home_page' %}">{% trans 'Home' %}</a></li>
+                <li {% if request.path in store_paths and not request.GET.on_discount == "yes" %}class="active"{% endif %}><a href="{% url 'store_page' %}">{% trans 'All_Products' %}</a></li>
+                <li {% if request.path == '/mk/categories/all' or request.path == '/en/categories/all' or request.path == '/sq/categories/all' %}class="active"{% endif %}>
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{% trans 'Categories' %} <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                    <div class="dropdown-menu">
+                            {% for category in categories%}
+                            <div class="col-md-3">
+                                <ul>
+                                    <li><a class="dropdown-item" href="{% url 'store_page' %}?category={{category.slug}}">{{ category.category_name }}</a></li>
+                                    <div style="border-bottom: #d10024 solid 1px;"></div>
+                                    {% for sub_cat in subcategories %}
+                                        {% if sub_cat.parent == category %}
+                                            <li><a class="dropdown-item" href="{% url 'store_page' %}?sub_category={{sub_cat.slug}}">{{ sub_cat.category_name}}</a></li>
+                                        {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            {% endfor %}
+                    </div>
+                </li>
                 <li {% if request.GET.on_discount == "yes" %}class="active"{% endif %}><a href="{% url 'store_page' %}?on_discount=yes">{% trans 'Discounts' %}</a></li>
-                <li {% if request.path == "/contact/" %}class="active"{% endif %}><a href="{% url 'contact_page' %}">{% trans 'Contact' %}</a></li>
-                <li {% if request.path == '/about-us' %}class="active"{% endif %}><a href="{% url 'about_us_page' %}">{% trans 'About_us' %}</a></li>
+                <li {% if request.path == "/mk/contact/" or request.path == "/en/contact/" or request.path == "/sq/contact/" %}class="active"{% endif %}><a href="{% url 'contact_page' %}">{% trans 'Contact' %}</a></li>
+                <li {% if request.path == '/mk/about-us' or request.path == '/en/about-us' or request.path == '/sq/about-us' %}class="active"{% endif %}><a href="{% url 'about_us_page' %}">{% trans 'About_us' %}</a></li>
             </ul>
             <!-- /NAV -->
         </div>
@@ -113,3 +130,44 @@
     <!-- /container -->
 </nav>
 <!-- /NAVIGATION -->
+<style>
+    .dropdown-menu{
+        border-radius: 0;
+        padding: .5em;
+    }
+
+    .dropdown-menu ul{
+        padding: 0;
+        list-style: none;
+    }
+    
+    .dropdown-menu li a{
+        color: gray;
+        padding: .5em 1em;
+    }
+
+    .dropdown-menu li:first-child a{
+        font-weight: bold;
+        font-size: 1.2em;
+        color: #d10024;
+    }
+
+    @media screen and (min-width: 999px){
+        .dropdown-toggle:hover .dropdown-menu{
+            display: flex;
+            width: 800px;
+        }
+
+        .open>.dropdown-menu{
+            display: flex;
+            width: 800px;
+        }
+    }
+    @media screen and (max-width: 992px){
+        .open>.dropdown-menu{
+            max-width: 60vh;
+            overflow-y: scroll;
+        }
+    }
+
+</style>
