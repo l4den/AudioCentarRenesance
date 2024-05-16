@@ -20,7 +20,7 @@ def create_token(sender, instance, created, **kwargs):
                                     {instance.email}
                                     """
         sender = 'audiocentarrenesansa@gmail.com'
-        receiver = ['stefan.ladinski.work@gmail.com', ]
+        receiver = ['Audiocentarrenesansa@gmail.com', ]
         # caraudio@t.mk
 
         send_mail(

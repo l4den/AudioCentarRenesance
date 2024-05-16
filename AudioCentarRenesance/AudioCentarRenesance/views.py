@@ -10,6 +10,7 @@ from brands.models import Brand
 from django.core.exceptions import ObjectDoesNotExist
 import math
 import random
+from urllib.parse import urlparse
 
 def generate_new_products(start, end):
 
@@ -106,7 +107,6 @@ def newsletter(request):
     return redirect('home_page')
 
 
-
 def about_us_page(request):
     images = AboutUsImage.objects.all()
     text = AboutUsText.objects.last()
@@ -119,8 +119,11 @@ def about_us_page(request):
 
 def switch_language(request, code):
     if code in ['en', 'mk', 'sq']:
-        previous_url = request.META.get('HTTP_REFERER')[24:]
-        return redirect('/' + code + previous_url)
+        previous_url = request.META.get('HTTP_REFERER')
+        parsed_url = urlparse(previous_url)
+        path = parsed_url.path
+
+        return redirect('/' + code + path[3:])
 
     else:
         messages.error(request, f'Language code {code} is not supported.')

@@ -9,7 +9,6 @@ from django.contrib import messages
 from django.template.loader import render_to_string
 from django.utils import timezone
 
-
 def store_page(request):
     # pre selected
     selected_category = request.GET.get('category')
