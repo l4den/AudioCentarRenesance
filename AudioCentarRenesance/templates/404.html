@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<br>
+<div class="section">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3>The page you tried to access does not exist</h3>
+                <a class="btn btn-primary" href="{% url 'home_page' %}" style="background-color: #d10024; border: none; font-weight: bold;">Back To Home Page</a>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+
+{% endblock content%}

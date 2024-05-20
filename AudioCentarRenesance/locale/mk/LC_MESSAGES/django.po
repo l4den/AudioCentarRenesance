@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-04-30 13:22+0200\n"
-"PO-Revision-Date: 2024-05-08 11:54+0200\n"
+"PO-Revision-Date: 2024-05-20 11:45+0200\n"
 "Last-Translator:   <gazda@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -220,7 +220,7 @@ msgstr "Контакт"
 
 #: .\templates\index.html:29
 msgid "Collection"
-msgstr "Колекција"
+msgstr "колекција"
 
 #: .\templates\index.html:30 .\templates\index.html:127
 msgid "Shop_now"

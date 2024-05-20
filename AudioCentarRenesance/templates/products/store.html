@@ -233,10 +233,10 @@
 
 			function updatePriceSlider(elem , value) {
 				if ( elem.hasClass('price-min') ) {
-					console.log('min')
+					//console.log('min')
 					priceSlider.noUiSlider.set([value, null]);
 				} else if ( elem.hasClass('price-max')) {
-					console.log('max')
+					//console.log('max')
 					priceSlider.noUiSlider.set([null, value]);
 				}
 			}
@@ -305,7 +305,7 @@
 				_filterObj['min_price'] = parseInt(document.getElementById('price-min').value, 10);
 				_filterObj['max_price'] = parseInt(document.getElementById('price-max').value, 10);
 
-				console.log(_filterObj)
+				//console.log(_filterObj)
 
 				// AJAX
 				$.ajax({

@@ -8,7 +8,7 @@ from django.utils import timezone
 
 @receiver(post_save, sender=ContactMessage)
 def create_token(sender, instance, created, **kwargs):
-    print('signal function called')
+    #print('signal function called')
     
     if created:
         
@@ -20,7 +20,7 @@ def create_token(sender, instance, created, **kwargs):
                                     {instance.email}
                                     """
         sender = 'audiocentarrenesansa@gmail.com'
-        receiver = ['Audiocentarrenesansa@gmail.com', ]
+        receiver = ['audiocentarrenesansa@gmail.com', ]
         # caraudio@t.mk
 
         send_mail(
